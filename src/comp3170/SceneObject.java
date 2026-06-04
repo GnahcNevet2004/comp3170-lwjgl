@@ -217,5 +217,10 @@ public class SceneObject {
 		}
 
 	}
+	
+	public void draw(Matrix4f view, Matrix4f projection) {
+	    Matrix4f mvp = new Matrix4f(projection).mul(view).mul(getMatrix());
+	    drawSelf(mvp);
+	}
 
 }
