@@ -409,26 +409,4 @@ public class GLBuffers {
 		return framebuffer;
 	}
 
-	public static float[] toFloatArray(Vector4f[] v) {
-	    float[] out = new float[v.length * 4];
-	    int i = 0;
-	    for (Vector4f p : v) {
-	        out[i++] = p.x;
-	        out[i++] = p.y;
-	        out[i++] = p.z;
-	        out[i++] = p.w;
-	    }
-	    return out;
-	}
-
-	public static float[] toFloatArray(Vector2f[] v) {
-	    float[] out = new float[v.length * 2];
-	    int i = 0;
-	    for (Vector2f p : v) {
-	        out[i++] = p.x;
-	        out[i++] = p.y;
-	    }
-	    return out;
-	}
-
 }

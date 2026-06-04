@@ -147,14 +147,13 @@ public class ShaderLibrary {
 	}
 
 	private File findFile(String filename) throws FileNotFoundException {
-		File f = new File(filename);
-		if (f.exists()) return f;
-
-		f = new File("shaders/" + filename);
-		if (f.exists()) return f;
-
-		f = new File("src/" + filename);
-		if (f.exists()) return f;
+		for (File dir : searchPath) {
+			for (File file : dir.listFiles()) {
+				if (file.getName().equals(filename)) {
+					return file;
+				}
+			}
+		}
 
 		throw new FileNotFoundException(filename);
 	}
